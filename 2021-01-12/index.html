@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  
+</head>
+<body>
+  
+  <div class="container">
+    <input class="txtb" type="text" placeholder="Add a task">
+    <div class="notcomp">
+      <h3>Not completed</h3>
+    </div>
+
+    <div class="comp">
+      <h3>completed</h3>
+    </div>
+  </div>
+
+  <script>
+    //13 means enter button
+    $(".txtb").on("keyup",function(e){
+      if(e.keyCode == 13 && $(".txtb").val() != "") {
+        // 아래 text function은 task class 가 감싸고 있는 텍스트를 text('!!!')괄호 안에 있는 내용으로 바꿔주는 기능을한다.
+        var task = $("<div class='task'></div>").text($(".txtb").val());
+        var del = $("<i class='fas fa-trash-alt'></i>").click(function() {
+          var p = $(this).parent();
+          p.fadeOut(function() {
+            p.remove();
+          });
+        });
+        var check = $("<i class='fas fa-check'></i>").click(function() {
+          var p = $(this).parent();
+          p.fadeOut(function() {
+            $(".comp").append(p);
+            p.fadeIn();
+          });
+          $(this).remove();
+        });
+
+        task.append(del,check);
+        $(".notcomp").append(task);
+          //to clear the input
+        $(".txtb").val("");
+      }
+    });
+  </script>
+
+</body>
+</html>
