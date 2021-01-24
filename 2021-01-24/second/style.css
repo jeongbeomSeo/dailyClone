@@ -1,0 +1,103 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #f1f1f1;
+  font-family: sans-serif;
+}
+
+.post {
+  width: 500px;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  box-shadow: 0 0 10px #000084;
+  cursor: pointer;
+}
+
+.post__header {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  position: relative;
+  transition: 0.3s height;
+}
+
+.post:hover > .post__header {
+  height: 140px;
+}
+
+.post__header img {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.post__header__date {
+  position: absolute;
+  z-index: 1;
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 0 12px;
+  height: 28px;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 700;
+  right: 0;
+  top: 0;
+  text-transform: uppercase;
+}
+
+.post__header__label {
+  position: absolute;
+  z-index: 1;
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 0 12px;
+  height: 28px;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 700;
+  left: 0;
+  bottom: 0;
+  text-transform: uppercase;
+}
+
+.post__body {
+  padding: 20px;
+  overflow: hidden;
+  height: 105px;
+  transition: 0.3s height;
+}
+
+.post:hover > .post__body {
+  height: 270px;
+  /* 기본적으로 조합자는 자식선택자인 > 와 형제선택자인 + 와 ~ 가 있고 중간에 같은 태그나 클래스, 아이디가 아니라면 
+  머가 오든 상관 없다!! 대신 div는 신경써줘야됨 -> 자식 인지 형제인지 check! */
+}
+
+.post__body h1 {
+  margin: 0 0 10px 0;
+  font-size: 28px;
+}
+
+.post__body span {
+  color: #000084;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.post__body p {
+  font-size: 18px;
+  line-height: 28px;
+  margin: 10px 0 0 0;
+}
+
+.post__footer {
+  padding: 0px 20px 14px 20px;
+}
