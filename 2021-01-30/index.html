@@ -1,0 +1,56 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <!-- style.css 로 적으면 적용이 안된다. -->
+  </head>
+  <body>
+    <div class="product-card">
+      <h1>Original Shoes</h1>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <div class="product__pic"></div>
+      <div class="product__colors">
+        <!-- 아래에 cata-color 와 data-pic은 JQurey를 사용할때 이용하기 위해서 미리 적어 두는 것-->
+        <span
+          class="blue active"
+          data-color="#AFC3D2"
+          data-pic="url(skyblue.jpg)"
+        ></span>
+        <span
+          class="green"
+          data-color="#CCF3D8"
+          data-pic="url(green.jpg)"
+        ></span>
+        <span
+          class="yellow"
+          data-color="#F8DF85"
+          data-pic="url(yellow.jpg)"
+        ></span>
+        <span class="pink" data-color="#D3A7DA" data-pic="url(pink.jpg)">
+        </span>
+      </div>
+      <div class="product__info">
+        <div class="product__info-price">$90</div>
+        <a href="#" class="product__info-btn">Add to Cart</a>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(".product__colors span").click(function () {
+        $(".product__colors span").removeClass("active"); // 해당  span에 적용되있는 JQurey이고 다른 버튼을 누르면 그 부분에 active가 생기고 기존에있던 active는 없애준다.
+        $(this).addClass("active"); //아래 꺼와 다르게 위에부분은 .produce__colors 에 있는 모든 span 에 active라는 클라스를 지워주는 작업. this의 특징이용.
+        $("body").css("background", $(this).attr("data-color")); // 이후 css를 적용 시키기 시작.
+        $(".product__info-price").css("color", $(this).attr("data-color"));
+        $(".product__info-btn").css("color", $(this).attr("data-color"));
+        $(".product__pic").css("background-image", $(this).attr("data-pic"));
+      });
+    </script>
+  </body>
+</html>
