@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="accordion">
+      <div class="accordion__item">
+        <div class="item-header">
+          <h1 class="title">Design</h1>
+          <div class="icon">+</div>
+        </div>
+        <p class="text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni non
+          ipsum sapiente dolore, esse vitae assumenda repellendus nisi quasi
+          quos, beatae culpa incidunt asperiores optio harum aspernatur ducimus.
+          Dolores, obcaecati!
+        </p>
+      </div>
+
+      <div class="accordion__item">
+        <div class="item-header">
+          <h1 class="title">Websites</h1>
+          <div class="icon">+</div>
+        </div>
+        <p class="text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni non
+          ipsum sapiente dolore, esse vitae assumenda repellendus nisi quasi
+          quos, beatae culpa incidunt asperiores optio harum aspernatur ducimus.
+          Dolores, obcaecati!
+        </p>
+      </div>
+
+      <div class="accordion__item">
+        <div class="item-header">
+          <h1 class="title">Section</h1>
+          <div class="icon">+</div>
+        </div>
+        <p class="text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni non
+          ipsum sapiente dolore, esse vitae assumenda repellendus nisi quasi
+          quos, beatae culpa incidunt asperiores optio harum aspernatur ducimus.
+          Dolores, obcaecati!
+        </p>
+      </div>
+
+      <div class="accordion__item">
+        <div class="item-header">
+          <h1 class="title">Databases</h1>
+          <div class="icon">+</div>
+        </div>
+        <p class="text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni non
+          ipsum sapiente dolore, esse vitae assumenda repellendus nisi quasi
+          quos, beatae culpa incidunt asperiores optio harum aspernatur ducimus.
+          Dolores, obcaecati!
+        </p>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript">
+      $(".item-header").click(function () {
+        currentClass = $(this).parent().attr("class");
+        $(".accordion__item").removeClass("active");
+        if (currentClass != "accordion__item active") {
+          $(".accordion__item").removeClass("active");
+          $(this).parent().addClass("active");
+          $(".icon").text("+");
+          $(this).children(".icon").text("-");
+        } else {
+          $(".icon").text("+");
+        }
+      });
+    </script>
+  </body>
+</html>
