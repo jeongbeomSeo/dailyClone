@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="blog owl-carousel">
+      <div class="blog__column">
+        <img src="./image/bg1.jpg" alt="" />
+        <div class="blog__column-description">
+          <div class="blog__column-categorie">Catle</div>
+          <h2 class="blog__column-title">Lorem ipsum dolor sit amet</h2>
+          <div class="blog__column-date">Jan 13 2020</div>
+          <a href="#" class="blog__column-btn">Read More</a>
+        </div>
+      </div>
+
+      <div class="blog__column">
+        <img src="./image/bg6.jpg" alt="" />
+        <div class="blog__column-description">
+          <div class="blog__column-categorie">Road</div>
+          <h2 class="blog__column-title">Lorem ipsum dolor sit amet</h2>
+          <div class="blog__column-date">Jan 13 2020</div>
+          <a href="#" class="blog__column-btn">Read More</a>
+        </div>
+      </div>
+
+      <div class="blog__column">
+        <img src="./image/bg7.jpg" alt="" />
+        <div class="blog__column-description">
+          <div class="blog__column-categorie">Canal</div>
+          <h2 class="blog__column-title">Lorem ipsum dolor sit amet</h2>
+          <div class="blog__column-date">Jan 13 2020</div>
+          <a href="#" class="blog__column-btn">Read More</a>
+        </div>
+      </div>
+
+      <div class="blog__column">
+        <img src="./image/bg9.jpg" alt="" />
+        <div class="blog__column-description">
+          <div class="blog__column-categorie">Glacial mountains</div>
+          <h2 class="blog__column-title">Lorem ipsum dolor sit amet</h2>
+          <div class="blog__column-date">Jan 13 2020</div>
+          <a href="#" class="blog__column-btn">Read More</a>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <script type="text/javascript">
+      $(".owl-carousel").owlCarousel({
+        items: 2,
+        margin: 20,
+        loop: true,
+        center: true,
+        dots: false,
+      });
+    </script>
+  </body>
+</html>
