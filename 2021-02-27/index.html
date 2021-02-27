@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="content">
+      <div class="content__counting-sec">
+        <div class="content__inner-width">
+          <div class="content__column">
+            <i class="far fa-smile-wink"></i>
+            <div class="number">1246</div>
+            <span>Speakers</span>
+          </div>
+
+          <div class="content__column">
+            <i class="fas fa-briefcase"></i>
+            <div class="number">19</div>
+            <span>Services</span>
+          </div>
+
+          <div class="content__column">
+            <i class="far fa-money-bill-alt"></i>
+            <div class="number">687</div>
+            <span>Sells</span>
+          </div>
+
+          <div class="content__column">
+            <i class="fas fa-object-group"></i>
+            <div class="number">823</div>
+            <span>Templates</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
+    <!-- 위에 두개를 불러오고 싶으면 jquery를 먼저 불러오고나서 불러와야됨. + min으로 불러오면 실행안됨. -->
+    <script type="text/javascript">
+      $(".number").counterUp({ delay: 10, time: 1000 });
+    </script>
+  </body>
+</html>
