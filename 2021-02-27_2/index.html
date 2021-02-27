@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="show-login-btn">
+      <i class="fas fa-sign-in-alt"></i> Show Login Form
+    </div>
+
+    <div class="login-box">
+      <div class="hide-login-btn"><i class="fas fa-times"></i></div>
+      <form action="index.html" class="login-form" method="post">
+        <h1>Welcome</h1>
+        <input class="txtb" type="text" placeholder="Username" />
+        <input class="txtb" type="password" placeholder="Password" />
+        <input class="login-btn" type="submit" value="Login" />
+      </form>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript">
+      $(".show-login-btn").on("click", function () {
+        $(".login-box").toggleClass("showed");
+      });
+      $(".hide-login-btn").on("click", function () {
+        $(".login-box").toggleClass("showed"); //없으면 추가, 있으면 제거! =>toggleClass
+      });
+    </script>
+  </body>
+</html>
