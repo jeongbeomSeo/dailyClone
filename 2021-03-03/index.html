@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coming soon Page Using Html CSS & JavaScript</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>DarkCode</h1>
+      <h2>We are coming soon.</h2>
+
+      <div class="count">
+        <div class="count__row">
+          <span id="count__days">00</span>
+          DAYS
+        </div>
+
+        <div class="count__row">
+          <span id="count__hours">00</span>
+          Hours
+        </div>
+
+        <div class="count__row">
+          <span id="count__minutes">00</span>
+          MINUTES
+        </div>
+
+        <div class="count__row">
+          <span id="count__seconds">00</span>
+          SECONDS
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      var count = new Date("Mar 28,2021 00:00:00").getTime();
+      //Date() 라는 생성자는 기본적으로 ms를 기준으로 잡는다.
+      var x = setInterval(function () {
+        var now = new Date().getTime();
+        var d = count - now;
+
+        var days = Math.floor(d / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((d % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((d % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((d % (1000 * 60)) / 1000);
+
+        document.getElementById("count__days").innerHTML = days;
+        document.getElementById("count__hours").innerHTML = hours;
+        document.getElementById("count__minutes").innerHTML = minutes;
+        document.getElementById("count__seconds").innerHTML = seconds;
+
+        if (d <= 0) {
+          clearInterval(x);
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>
