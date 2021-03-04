@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="skills">
+      <div class="skill">
+        <div class="skill-name">HTML</div>
+        <div class="skill-bar">
+          <div class="skill-per" per="90"></div>
+        </div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-name">CSS</div>
+        <div class="skill-bar">
+          <div class="skill-per" per="70"></div>
+        </div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-name">JavaScript</div>
+        <div class="skill-bar">
+          <div class="skill-per" per="60"></div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      $(".skill-per").each(function () {
+        var $this = $(this);
+        var per = $this.attr("per");
+        // .attr()은 element의 attribute의 값을 가져오거나 속성을 추가합니다.
+        $this.css("width", per + "%");
+        //  .skill-per의 css에 width에 변수 per을 추가
+        $({ animatedValue: 0 }).animate(
+          { animatedValue: per },
+          {
+            duration: 1000,
+            step: function () {
+              $this.attr("per", Math.floor(this.animatedValue) + "%");
+            },
+            complete: function () {
+              $this.attr("per", Math.floor(this.animatedValue) + "%");
+            },
+          }
+        );
+        //.animate() 는 애니메이션 효과를 만듭니다.
+      });
+    </script>
+  </body>
+</html>
